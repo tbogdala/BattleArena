@@ -233,7 +233,7 @@ void ABattleArenaGameModeBase::FinishRound(AActor* Winner, AActor* Loser)
 		ABattleCharacter* WinnerPlayer = Cast<ABattleCharacter>(Winner);
 		if (WinnerPlayer)
 		{
-			ABattleArenaPlayerState* PS = Cast<ABattleArenaPlayerState>(WinnerPlayer->PlayerState);
+			ABattleArenaPlayerState* PS = Cast<ABattleArenaPlayerState>(WinnerPlayer->GetPlayerState());
 			if (PS)
 			{
 				PS->Wins += 1;
@@ -243,7 +243,7 @@ void ABattleArenaGameModeBase::FinishRound(AActor* Winner, AActor* Loser)
 		ABattleCharacter* LosingPlayer = Cast<ABattleCharacter>(Loser);
 		if (LosingPlayer)
 		{
-			ABattleArenaPlayerState* PS = Cast<ABattleArenaPlayerState>(LosingPlayer->PlayerState);
+			ABattleArenaPlayerState* PS = Cast<ABattleArenaPlayerState>(LosingPlayer->GetPlayerState());
 			if (PS)
 			{
 				PS->Losses += 1;
